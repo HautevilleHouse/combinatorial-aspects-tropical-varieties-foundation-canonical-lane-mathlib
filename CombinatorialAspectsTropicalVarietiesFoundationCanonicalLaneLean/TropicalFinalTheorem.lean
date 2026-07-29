@@ -1,0 +1,20 @@
+import canonicalLaneMathlib.AdmissibleClass
+import CombinatorialAspectsTropicalVarietiesFoundationCanonicalLaneLean.TropicalToricVarieties
+import CombinatorialAspectsTropicalVarietiesFoundationCanonicalLaneLean.TropicalCurveEnumeration
+import CombinatorialAspectsTropicalVarietiesFoundationCanonicalLaneLean.TropicalHypersurface
+import CombinatorialAspectsTropicalVarietiesFoundationCanonicalLaneLean.TropicalIntersection
+import CombinatorialAspectsTropicalVarietiesFoundationCanonicalLaneLean.TropicalAmoeba
+import CombinatorialAspectsTropicalVarietiesFoundationCanonicalLaneLean.TropicalModuli
+
+namespace HautevilleHouse
+namespace CombinatorialAspectsTropicalVarietiesFoundationCanonicalLaneLean
+
+def ConstrainedTropicalClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_tropical_endgame (A : AdmissibleClass) :
+    ConstrainedTropicalClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CombinatorialAspectsTropicalVarietiesFoundationCanonicalLaneLean
+end HautevilleHouse
